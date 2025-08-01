@@ -1,31 +1,25 @@
 import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { Layout } from 'antd';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Hero from './components/Hero';
-import VideoInputForm from './components/VideoInputForm';
-import Features from './components/Features';
+import Home from './pages/Home';
+import Features from './pages/Features';
+import About from './pages/About';
 import './styles/global.scss';
 
 const { Content } = Layout;
 
 function App() {
-  const [videoData, setVideoData] = useState(null);
-
   return (
     <Layout className="app-layout">
       <Header />
       <Content className="main-content">
-        <Hero />
-        <div className="container">
-          <div className="downloader-section">
-            <VideoInputForm 
-              videoData={videoData} 
-              setVideoData={setVideoData} 
-            />
-          </div>
-          <Features />
-        </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/features" element={<Features />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
       </Content>
       <Footer />
     </Layout>

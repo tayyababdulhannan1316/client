@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Layout, Typography, Space, Divider } from 'antd';
 import { 
   InstagramOutlined, 
@@ -29,29 +30,39 @@ const Footer = () => {
           <div className="footer-section">
             <Text strong className="footer-title">Quick Links</Text>
             <div className="footer-links">
-              <Link href="#" className="footer-link">Home</Link>
-              <Link href="#" className="footer-link">Features</Link>
-              <Link href="#" className="footer-link">Privacy Policy</Link>
-              <Link href="#" className="footer-link">Terms of Service</Link>
+              <Link to="/" className="footer-link">Home</Link>
+              <Link to="/features" className="footer-link">Features</Link>
+              <Link to="/about" className="footer-link">About</Link>
+              <a href="#" className="footer-link">Privacy Policy</a>
+              <a href="#" className="footer-link">Terms of Service</a>
             </div>
           </div>
           
           <div className="footer-section">
             <Text strong className="footer-title">Support</Text>
             <div className="footer-links">
-              <Link href="#" className="footer-link">Help Center</Link>
-              <Link href="#" className="footer-link">Contact Us</Link>
-              <Link href="#" className="footer-link">FAQ</Link>
-              <Link href="#" className="footer-link">Report Issue</Link>
+              <a href="#" className="footer-link">Help Center</a>
+              <a href="#" className="footer-link">Contact Us</a>
+              <a href="#" className="footer-link">FAQ</a>
+              <a href="#" className="footer-link">Report Issue</a>
             </div>
           </div>
           
           <div className="footer-section">
             <Text strong className="footer-title">Follow Us</Text>
             <Space size="large" className="social-links">
-              <InstagramOutlined className="social-icon" />
-              <TwitterOutlined className="social-icon" />
-              <GithubOutlined className="social-icon" />
+              <InstagramOutlined 
+                className="social-icon" 
+                onClick={() => window.open('https://instagram.com', '_blank')}
+              />
+              <TwitterOutlined 
+                className="social-icon" 
+                onClick={() => window.open('https://twitter.com', '_blank')}
+              />
+              <GithubOutlined 
+                className="social-icon" 
+                onClick={() => window.open('https://github.com', '_blank')}
+              />
             </Space>
           </div>
         </div>
